@@ -3,7 +3,7 @@
 
 # Terraform ACI Banner Module
 
-Description
+Manages ACI Banner
 
 Location in GUI:
 `System` » `System Settings` » `System Alias and Banners`
