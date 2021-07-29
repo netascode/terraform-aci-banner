@@ -1,9 +1,10 @@
-resource "aci_rest" "fvTenant" {
-  dn         = "uni/tn-${var.name}"
-  class_name = "fvTenant"
+resource "aci_rest" "aaaPreLoginBanner" {
+  dn         = "uni/userext/preloginbanner"
+  class_name = "aaaPreLoginBanner"
   content = {
-    name      = var.name
-    nameAlias = var.alias
-    descr     = var.description
+    guiMessage     = var.apic_gui_banner_url
+    guiTextMessage = var.apic_gui_alias
+    message        = var.apic_cli_banner
+    switchMessage  = var.switch_cli_banner
   }
 }

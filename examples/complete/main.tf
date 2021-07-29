@@ -1,7 +1,8 @@
-module "aci_scaffolding" {
-  source = "netascode/scaffolding/aci"
+module "aci_banner" {
+  source = "netascode/banner/aci"
 
-  name        = "ABC"
-  alias       = "ABC-ALIAS"
-  description = "My Description"
+  apic_gui_banner_url = "http://1.1.1.1"
+  apic_gui_alias      = "PROD"
+  apic_cli_banner     = "My CLI Banner"
+  switch_cli_banner   = "My Switch Banner"
 }

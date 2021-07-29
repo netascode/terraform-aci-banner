@@ -1,31 +1,21 @@
-variable "name" {
-  description = "Tenant name"
-  type        = string
-
-  validation {
-    condition     = can(regex("^[a-zA-Z0-9_.-]{0,64}$", var.name))
-    error_message = "Allowed characters: `a`-`z`, `A`-`Z`, `0`-`9`, `_`, `.`, `-`. Maximum characters: 64."
-  }
-}
-
-variable "alias" {
-  description = "Tenant alias"
+variable "apic_gui_banner_url" {
+  description = "APIC GUI banner URL"
   type        = string
   default     = ""
-
-  validation {
-    condition     = can(regex("^[a-zA-Z0-9_.-]{0,64}$", var.alias))
-    error_message = "Allowed characters: `a`-`z`, `A`-`Z`, `0`-`9`, `_`, `.`, `-`. Maximum characters: 64."
-  }
 }
 
-variable "description" {
-  description = "Tenant description"
+variable "apic_gui_alias" {
+  description = "APIC GUI alias"
   type        = string
   default     = ""
-
-  validation {
-    condition     = can(regex("^[a-zA-Z0-9\\!#$%()*,-./:;@ _{|}~?&+]{0,128}$", var.description))
-    error_message = "Allowed characters: `a`-`z`, `A`-`Z`, `0`-`9`, `\\`, `!`, `#`, `$`, `%`, `(`, `)`, `*`, `,`, `-`, `.`, `/`, `:`, `;`, `@`, ` `, `_`, `{`, `|`, }`, `~`, `?`, `&`, `+`. Maximum characters: 128."
-  }
+}
+variable "apic_cli_banner" {
+  description = "APIC CLI banner"
+  type        = string
+  default     = ""
+}
+variable "switch_cli_banner" {
+  description = "Switch CLI banner"
+  type        = string
+  default     = ""
 }

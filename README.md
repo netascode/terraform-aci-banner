@@ -1,22 +1,23 @@
 <!-- BEGIN_TF_DOCS -->
-[![Tests](https://github.com/netascode/terraform-aci-scaffolding/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-scaffolding/actions/workflows/test.yml)
+[![Tests](https://github.com/netascode/terraform-aci-banner/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-banner/actions/workflows/test.yml)
 
-# Terraform ACI Scaffolding Module
+# Terraform ACI Banner Module
 
 Description
 
 Location in GUI:
-`Tenants` » `XXX`
+`System` » `System Settings` » `System Alias and Banners`
 
 ## Examples
 
 ```hcl
-module "aci_scaffolding" {
-  source = "netascode/scaffolding/aci"
+module "aci_banner" {
+  source = "netascode/banner/aci"
 
-  name        = "ABC"
-  alias       = "ABC-ALIAS"
-  description = "My Description"
+  apic_gui_banner_url = "http://1.1.1.1"
+  apic_gui_alias      = "PROD"
+  apic_cli_banner     = "My CLI Banner"
+  switch_cli_banner   = "My Switch Banner"
 }
 
 ```
@@ -38,20 +39,20 @@ module "aci_scaffolding" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | Tenant name | `string` | n/a | yes |
-| <a name="input_alias"></a> [alias](#input\_alias) | Tenant alias | `string` | `""` | no |
-| <a name="input_description"></a> [description](#input\_description) | Tenant description | `string` | `""` | no |
+| <a name="input_apic_gui_banner_url"></a> [apic\_gui\_banner\_url](#input\_apic\_gui\_banner\_url) | APIC GUI banner URL | `string` | `""` | no |
+| <a name="input_apic_gui_alias"></a> [apic\_gui\_alias](#input\_apic\_gui\_alias) | APIC GUI alias | `string` | `""` | no |
+| <a name="input_apic_cli_banner"></a> [apic\_cli\_banner](#input\_apic\_cli\_banner) | APIC CLI banner | `string` | `""` | no |
+| <a name="input_switch_cli_banner"></a> [switch\_cli\_banner](#input\_switch\_cli\_banner) | Switch CLI banner | `string` | `""` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dn"></a> [dn](#output\_dn) | Distinguished name of `fvTenant` object |
-| <a name="output_name"></a> [name](#output\_name) | Tenant name |
+| <a name="output_dn"></a> [dn](#output\_dn) | Distinguished name of `aaaPreLoginBanner` object |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aci_rest.fvTenant](https://registry.terraform.io/providers/netascode/aci/latest/docs/resources/rest) | resource |
+| [aci_rest.aaaPreLoginBanner](https://registry.terraform.io/providers/netascode/aci/latest/docs/resources/rest) | resource |
 <!-- END_TF_DOCS -->
