@@ -39,10 +39,10 @@ module "aci_banner" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_apic_gui_banner_url"></a> [apic\_gui\_banner\_url](#input\_apic\_gui\_banner\_url) | APIC GUI banner URL | `string` | `""` | no |
-| <a name="input_apic_gui_alias"></a> [apic\_gui\_alias](#input\_apic\_gui\_alias) | APIC GUI alias | `string` | `""` | no |
-| <a name="input_apic_cli_banner"></a> [apic\_cli\_banner](#input\_apic\_cli\_banner) | APIC CLI banner | `string` | `""` | no |
-| <a name="input_switch_cli_banner"></a> [switch\_cli\_banner](#input\_switch\_cli\_banner) | Switch CLI banner | `string` | `""` | no |
+| <a name="input_apic_gui_banner_url"></a> [apic\_gui\_banner\_url](#input\_apic\_gui\_banner\_url) | APIC GUI banner URL. | `string` | `""` | no |
+| <a name="input_apic_gui_alias"></a> [apic\_gui\_alias](#input\_apic\_gui\_alias) | APIC GUI alias. | `string` | `""` | no |
+| <a name="input_apic_cli_banner"></a> [apic\_cli\_banner](#input\_apic\_cli\_banner) | APIC CLI banner. | `string` | `""` | no |
+| <a name="input_switch_cli_banner"></a> [switch\_cli\_banner](#input\_switch\_cli\_banner) | Switch CLI banner. | `string` | `""` | no |
 
 ## Outputs
 
