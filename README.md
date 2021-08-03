@@ -48,7 +48,7 @@ module "aci_banner" {
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dn"></a> [dn](#output\_dn) | Distinguished name of `aaaPreLoginBanner` object |
+| <a name="output_dn"></a> [dn](#output\_dn) | Distinguished name of `aaaPreLoginBanner` object. |
 
 ## Resources
 
