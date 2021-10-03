@@ -12,7 +12,8 @@ Location in GUI:
 
 ```hcl
 module "aci_banner" {
-  source = "netascode/banner/aci"
+  source  = "netascode/banner/aci"
+  version = ">= 0.0.1"
 
   apic_gui_banner_url = "http://1.1.1.1"
   apic_gui_alias      = "PROD"
