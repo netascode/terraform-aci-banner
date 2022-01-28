@@ -1,4 +1,4 @@
-resource "aci_rest" "aaaPreLoginBanner" {
+resource "aci_rest_managed" "aaaPreLoginBanner" {
   dn         = "uni/userext/preloginbanner"
   class_name = "aaaPreLoginBanner"
   content = {

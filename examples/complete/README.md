@@ -14,13 +14,12 @@ Note that this example will create resources. Resources can be destroyed with `t
 ```hcl
 module "aci_banner" {
   source  = "netascode/banner/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   apic_gui_banner_url = "http://1.1.1.1"
   apic_gui_alias      = "PROD"
   apic_cli_banner     = "My CLI Banner"
   switch_cli_banner   = "My Switch Banner"
 }
-
 ```
 <!-- END_TF_DOCS -->

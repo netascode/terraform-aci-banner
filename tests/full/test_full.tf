@@ -5,8 +5,8 @@ terraform {
     }
 
     aci = {
-      source  = "netascode/aci"
-      version = ">=0.2.0"
+      source  = "CiscoDevNet/aci"
+      version = ">=2.0.0"
     }
   }
 }
@@ -20,7 +20,7 @@ module "main" {
   switch_cli_banner   = "My Switch Banner"
 }
 
-data "aci_rest" "aaaPreLoginBanner" {
+data "aci_rest_managed" "aaaPreLoginBanner" {
   dn = "uni/userext/preloginbanner"
 
   depends_on = [module.main]
@@ -31,25 +31,25 @@ resource "test_assertions" "aaaPreLoginBanner" {
 
   equal "guiMessage" {
     description = "guiMessage"
-    got         = data.aci_rest.aaaPreLoginBanner.content.guiMessage
+    got         = data.aci_rest_managed.aaaPreLoginBanner.content.guiMessage
     want        = "http://1.1.1.1"
   }
 
   equal "guiTextMessage" {
     description = "guiTextMessage"
-    got         = data.aci_rest.aaaPreLoginBanner.content.guiTextMessage
+    got         = data.aci_rest_managed.aaaPreLoginBanner.content.guiTextMessage
     want        = "PROD"
   }
 
   equal "message" {
     description = "message"
-    got         = data.aci_rest.aaaPreLoginBanner.content.message
+    got         = data.aci_rest_managed.aaaPreLoginBanner.content.message
     want        = "My CLI Banner"
   }
 
   equal "switchMessage" {
     description = "switchMessage"
-    got         = data.aci_rest.aaaPreLoginBanner.content.switchMessage
+    got         = data.aci_rest_managed.aaaPreLoginBanner.content.switchMessage
     want        = "My Switch Banner"
   }
 }
