@@ -14,10 +14,10 @@ terraform {
 module "main" {
   source = "../.."
 
-  apic_gui_banner_url = "http://1.1.1.1"
-  apic_gui_alias      = "PROD"
-  apic_cli_banner     = "My CLI Banner"
-  switch_cli_banner   = "My Switch Banner"
+  apic_gui_banner_message = "GUI Banner Message"
+  apic_gui_alias          = "PROD"
+  apic_cli_banner         = "My CLI Banner"
+  switch_cli_banner       = "My Switch Banner"
 }
 
 data "aci_rest_managed" "aaaPreLoginBanner" {
@@ -32,7 +32,13 @@ resource "test_assertions" "aaaPreLoginBanner" {
   equal "guiMessage" {
     description = "guiMessage"
     got         = data.aci_rest_managed.aaaPreLoginBanner.content.guiMessage
-    want        = "http://1.1.1.1"
+    want        = "GUI Banner Message"
+  }
+
+  equal "isGuiMessageText" {
+    description = "isGuiMessageText"
+    got         = data.aci_rest_managed.aaaPreLoginBanner.content.isGuiMessageText
+    want        = "yes"
   }
 
   equal "guiTextMessage" {

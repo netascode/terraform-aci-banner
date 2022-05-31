@@ -39,6 +39,7 @@ module "aci_banner" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_apic_gui_banner_message"></a> [apic\_gui\_banner\_message](#input\_apic\_gui\_banner\_message) | APIC GUI banner message. Either a GUI banner message or a GUI banner URL can be used, but not both. | `string` | `""` | no |
 | <a name="input_apic_gui_banner_url"></a> [apic\_gui\_banner\_url](#input\_apic\_gui\_banner\_url) | APIC GUI banner URL. | `string` | `""` | no |
 | <a name="input_apic_gui_alias"></a> [apic\_gui\_alias](#input\_apic\_gui\_alias) | APIC GUI alias. | `string` | `""` | no |
 | <a name="input_apic_cli_banner"></a> [apic\_cli\_banner](#input\_apic\_cli\_banner) | APIC CLI banner. | `string` | `""` | no |
